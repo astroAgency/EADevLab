@@ -3,7 +3,7 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { useLanguage } from "@/context/language-context";
-import { ArrowLeft, ArrowRight, Calendar, Users, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Users, Clock, Search, Palette, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,6 +14,7 @@ const projects = {
     titleKey: "portfolio.project1Title",
     descKey: "portfolio.project1Desc",
     tag: "UI/UX Design",
+    category: "uiux",
     logo: "/images/kova-logo.svg",
     bgColor: "from-[#0F172A] to-[#1E293B]",
     illustration: "/images/kova-preview.svg",
@@ -23,11 +24,14 @@ const projects = {
     team: "portfolio.team2",
     accentColor: "#2563EB",
     link: "https://kovastudio.vercel.app/",
+    tools: ["Figma", "Framer", "Notion"],
+    caseStudyPrefix: "caseStudy.kova",
   },
   "flow-desk": {
     titleKey: "portfolio.project2Title",
     descKey: "portfolio.project2Desc",
     tag: "SaaS Design",
+    category: "saas",
     logo: "/images/flowdesk-logo.svg",
     bgColor: "from-[#0F172A] to-[#1E293B]",
     illustration: "/images/flowdesk-preview.svg",
@@ -37,20 +41,8 @@ const projects = {
     team: "portfolio.team2",
     accentColor: "#06B6D4",
     link: "https://flowdeskdashboard.vercel.app/",
-  },
-  "wordpress-project": {
-    titleKey: "portfolio.project3Title",
-    descKey: "portfolio.project3Desc",
-    tag: "Web Design",
-    logo: "/images/wp-logo.svg",
-    bgColor: "from-[#1E3A5F] to-[#21759B]",
-    illustration: "/images/wp-preview.svg",
-    client: "portfolio.client3",
-    date: "2025",
-    duration: "portfolio.duration3",
-    team: "portfolio.team3",
-    accentColor: "#21759B",
-    link: "#",
+    tools: ["Figma", "Framer", "Notion", "Miro"],
+    caseStudyPrefix: "caseStudy.flowdesk",
   },
 };
 
@@ -91,6 +83,8 @@ export default function ProjectPage() {
     currentIndex < projectKeys.length - 1
       ? projectKeys[currentIndex + 1]
       : null;
+
+  const prefix = project.caseStudyPrefix;
 
   return (
     <div className="min-h-screen bg-background">
@@ -158,7 +152,7 @@ export default function ProjectPage() {
                   </span>
                 </div>
                 <p className="font-semibold text-foreground">
-                  {t(project.client)}
+                  {project.client}
                 </p>
               </div>
               <div className="bg-card/60 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] rounded-xl p-5 md:p-6 hover:border-[rgba(255,255,255,0.12)] transition-colors">
@@ -191,6 +185,226 @@ export default function ProjectPage() {
                 <p className="font-semibold text-foreground">
                   {t(project.team)}
                 </p>
+              </div>
+            </div>
+
+            {/* Tools Used Section */}
+            <div className="bg-card/60 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] rounded-2xl p-6 md:p-8 mb-12">
+              <h2 className="text-lg font-semibold text-foreground mb-4">
+                {t(`${prefix}.tools`)}
+              </h2>
+              <div className="flex flex-wrap gap-3">
+                {project.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="text-sm font-medium px-4 py-2 rounded-full border"
+                    style={{
+                      backgroundColor: `${project.accentColor}10`,
+                      borderColor: `${project.accentColor}25`,
+                      color: project.accentColor,
+                    }}
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* The Challenge Section */}
+            <div className="bg-card/60 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] rounded-2xl p-6 md:p-8 mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                {t(`${prefix}.challenge`)}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
+                {t(`${prefix}.challengeDesc`)}
+              </p>
+            </div>
+
+            {/* Research & Discovery Section */}
+            <div className="bg-card/60 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] rounded-2xl p-6 md:p-8 mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                {t(`${prefix}.research`)}
+              </h2>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <div
+                    className="w-2 h-2 rounded-full mt-2 shrink-0"
+                    style={{ backgroundColor: project.accentColor }}
+                  />
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t(`${prefix}.researchPoint1`)}
+                  </p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div
+                    className="w-2 h-2 rounded-full mt-2 shrink-0"
+                    style={{ backgroundColor: project.accentColor }}
+                  />
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t(`${prefix}.researchPoint2`)}
+                  </p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div
+                    className="w-2 h-2 rounded-full mt-2 shrink-0"
+                    style={{ backgroundColor: project.accentColor }}
+                  />
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t(`${prefix}.researchPoint3`)}
+                  </p>
+                </li>
+              </ul>
+            </div>
+
+            {/* Design Process Section - Horizontal Stepper */}
+            <div className="bg-card/60 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] rounded-2xl p-6 md:p-8 mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                {t(`${prefix}.designProcess`)}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
+                {/* Step 1 - Discovery */}
+                <div className="relative flex flex-col items-center text-center">
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: `${project.accentColor}15` }}
+                  >
+                    <Search className="w-7 h-7" style={{ color: project.accentColor }} />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">
+                    {t(`${prefix}.discovery`)}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {t(`${prefix}.discoveryDesc`)}
+                  </p>
+                  {/* Connector line - hidden on mobile */}
+                  <div
+                    className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-0.5"
+                    style={{ backgroundColor: `${project.accentColor}30` }}
+                  />
+                </div>
+                {/* Step 2 - Design */}
+                <div className="relative flex flex-col items-center text-center">
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: `${project.accentColor}15` }}
+                  >
+                    <Palette className="w-7 h-7" style={{ color: project.accentColor }} />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">
+                    {t(`${prefix}.design`)}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {t(`${prefix}.designDesc`)}
+                  </p>
+                  {/* Connector line - hidden on mobile */}
+                  <div
+                    className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-0.5"
+                    style={{ backgroundColor: `${project.accentColor}30` }}
+                  />
+                </div>
+                {/* Step 3 - Delivery */}
+                <div className="flex flex-col items-center text-center">
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: `${project.accentColor}15` }}
+                  >
+                    <Package className="w-7 h-7" style={{ color: project.accentColor }} />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">
+                    {t(`${prefix}.delivery`)}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {t(`${prefix}.deliveryDesc`)}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Screens / Mockups Section */}
+            <div className="bg-card/60 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] rounded-2xl p-6 md:p-8 mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                {t(`${prefix}.keyScreens`)}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[1, 2, 3, 4].map((num) => (
+                  <div
+                    key={num}
+                    className="relative aspect-video rounded-xl overflow-hidden border border-[rgba(255,255,255,0.06)]"
+                    style={{ backgroundColor: `${project.accentColor}08` }}
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span
+                        className="text-sm font-medium px-4 py-2 rounded-lg"
+                        style={{
+                          backgroundColor: `${project.accentColor}15`,
+                          color: project.accentColor,
+                        }}
+                      >
+                        {t("caseStudy.screen")} {num}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Results & Impact Section */}
+            <div className="bg-card/60 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] rounded-2xl p-6 md:p-8 mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                {t(`${prefix}.results`)}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div
+                  className="rounded-xl p-6 text-center border"
+                  style={{
+                    backgroundColor: `${project.accentColor}08`,
+                    borderColor: `${project.accentColor}20`,
+                  }}
+                >
+                  <div
+                    className="text-4xl md:text-5xl font-bold mb-2"
+                    style={{ color: project.accentColor }}
+                  >
+                    {t(`${prefix}.stat1Value`)}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {t(`${prefix}.stat1Label`)}
+                  </div>
+                </div>
+                <div
+                  className="rounded-xl p-6 text-center border"
+                  style={{
+                    backgroundColor: `${project.accentColor}08`,
+                    borderColor: `${project.accentColor}20`,
+                  }}
+                >
+                  <div
+                    className="text-4xl md:text-5xl font-bold mb-2"
+                    style={{ color: project.accentColor }}
+                  >
+                    {t(`${prefix}.stat2Value`)}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {t(`${prefix}.stat2Label`)}
+                  </div>
+                </div>
+                <div
+                  className="rounded-xl p-6 text-center border"
+                  style={{
+                    backgroundColor: `${project.accentColor}08`,
+                    borderColor: `${project.accentColor}20`,
+                  }}
+                >
+                  <div
+                    className="text-4xl md:text-5xl font-bold mb-2"
+                    style={{ color: project.accentColor }}
+                  >
+                    {t(`${prefix}.stat3Value`)}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {t(`${prefix}.stat3Label`)}
+                  </div>
+                </div>
               </div>
             </div>
 

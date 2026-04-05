@@ -6,15 +6,27 @@ import { useLanguage } from "@/context/language-context"
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
+
+type FilterCategory = "all" | "uiux" | "saas" | "web"
 
 export default function PortfolioPage() {
   const { t } = useLanguage()
+  const [activeFilter, setActiveFilter] = useState<FilterCategory>("all")
+
+  const filters: { key: FilterCategory; labelKey: string }[] = [
+    { key: "all", labelKey: "portfolio.filterAll" },
+    { key: "uiux", labelKey: "portfolio.filterUIUX" },
+    { key: "saas", labelKey: "portfolio.filterSaaS" },
+    { key: "web", labelKey: "portfolio.filterWeb" },
+  ]
 
   const projects = [
     {
       titleKey: "portfolio.project1Title",
       descKey: "portfolio.project1Desc",
       tag: "UI/UX Design",
+      category: "uiux" as FilterCategory,
       logo: "/images/kova-logo.svg",
       bgColor: "from-[#0F172A] to-[#1E293B]",
       illustration: "/images/kova-preview.svg",
@@ -25,24 +37,18 @@ export default function PortfolioPage() {
       titleKey: "portfolio.project2Title",
       descKey: "portfolio.project2Desc",
       tag: "SaaS Design",
+      category: "saas" as FilterCategory,
       logo: "/images/flowdesk-logo.svg",
       bgColor: "from-[#0F172A] to-[#1E293B]",
       illustration: "/images/flowdesk-preview.svg",
       slug: "flow-desk",
       accentColor: "#06B6D4",
     },
-    {
-      titleKey: "portfolio.project3Title",
-      descKey: "portfolio.project3Desc",
-      tag: "Web Design",
-      logo: "/images/wp-logo.svg",
-      bgColor: "from-[#1E3A5F] to-[#21759B]",
-      illustration: "/images/wp-preview.svg",
-      slug: "wordpress-project",
-      comingSoon: true,
-      accentColor: "#21759B",
-    },
   ]
+
+  const filteredProjects = activeFilter === "all" 
+    ? projects 
+    : projects.filter(p => p.category === activeFilter)
 
   return (
     <div className="min-h-screen bg-background">
@@ -56,7 +62,7 @@ export default function PortfolioPage() {
         <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
           <div className="max-w-7xl mx-auto">
             {/* Hero Section */}
-            <div className="text-center mb-16 md:mb-20">
+            <div className="text-center mb-12 md:mb-16">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-[-0.02em]">
                 {t("portfolio.title1")}{" "}
                 <span className="gradient-text">{t("portfolio.title2")}</span>
@@ -66,9 +72,26 @@ export default function PortfolioPage() {
               </p>
             </div>
 
+            {/* Filter Tabs */}
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-12">
+              {filters.map((filter) => (
+                <button
+                  key={filter.key}
+                  onClick={() => setActiveFilter(filter.key)}
+                  className={`px-4 md:px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                    activeFilter === filter.key
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-card/60 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] text-muted-foreground hover:text-foreground hover:border-[rgba(255,255,255,0.12)]"
+                  }`}
+                >
+                  {t(filter.labelKey)}
+                </button>
+              ))}
+            </div>
+
             {/* Projects Grid */}
             <div className="space-y-8">
-              {projects.map((project, index) => (
+              {filteredProjects.map((project, index) => (
                 <div
                   key={index}
                   className="group grid grid-cols-1 md:grid-cols-2 bg-card/50 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] rounded-2xl overflow-hidden hover:border-[rgba(255,255,255,0.12)] transition-all duration-300"
@@ -104,30 +127,17 @@ export default function PortfolioPage() {
                       {t(project.descKey)}
                     </p>
 
-                    {project.comingSoon ? (
-                      <span className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full w-fit bg-muted/50 text-muted-foreground border border-[rgba(255,255,255,0.06)]">
-                        {t("portfolio.comingSoon")}
-                      </span>
-                    ) : (
-                      <Link
-                        href={`/portfolio/${project.slug}`}
-                        className="inline-flex items-center gap-2 font-semibold text-foreground hover:text-primary transition-colors group/link text-sm md:text-base"
-                      >
-                        {t("portfolio.viewCase")}
-                        <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                      </Link>
-                    )}
+                    <Link
+                      href={`/portfolio/${project.slug}`}
+                      className="inline-flex items-center gap-2 font-semibold text-foreground hover:text-primary transition-colors group/link text-sm md:text-base"
+                    >
+                      {t("portfolio.viewCase")}
+                      <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
 
                   {/* Image */}
                   <div className={`relative overflow-hidden min-h-[240px] sm:min-h-[300px] md:min-h-[420px] order-1 md:order-2 bg-gradient-to-br ${project.bgColor}`}>
-                    {project.comingSoon && (
-                      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm z-10 flex items-center justify-center">
-                        <span className="bg-card/90 backdrop-blur-sm border border-[rgba(255,255,255,0.1)] text-foreground text-sm font-medium px-6 py-3 rounded-full">
-                          {t("portfolio.comingSoon")}
-                        </span>
-                      </div>
-                    )}
                     <Image
                       src={project.illustration || "/placeholder.svg"}
                       alt={t(project.titleKey)}
@@ -140,6 +150,40 @@ export default function PortfolioPage() {
                   </div>
                 </div>
               ))}
+
+              {/* Coming Soon Card */}
+              <div className="group grid grid-cols-1 md:grid-cols-2 bg-card/30 backdrop-blur-sm border-2 border-dashed border-[rgba(255,255,255,0.1)] rounded-2xl overflow-hidden opacity-60">
+                {/* Content */}
+                <div className="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+                  <span className="inline-block text-xs font-medium px-3 py-1.5 rounded-full mb-6 w-fit bg-muted/50 text-muted-foreground border border-[rgba(255,255,255,0.06)]">
+                    {t("portfolio.comingSoon")}
+                  </span>
+
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 leading-tight text-muted-foreground">
+                    {t("portfolio.newProject")} — {t("portfolio.comingSoon")}
+                  </h3>
+
+                  <p className="text-base text-muted-foreground/60 mb-8 leading-relaxed">
+                    {t("portfolio.project3Desc")}
+                  </p>
+
+                  <span className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full w-fit bg-muted/30 text-muted-foreground/60 border border-[rgba(255,255,255,0.04)]">
+                    {t("portfolio.comingSoon")}
+                  </span>
+                </div>
+
+                {/* Placeholder Image */}
+                <div className="relative overflow-hidden min-h-[240px] sm:min-h-[300px] md:min-h-[420px] order-1 md:order-2 bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 rounded-2xl bg-muted/20 border border-[rgba(255,255,255,0.06)] flex items-center justify-center mx-auto mb-4">
+                      <span className="text-3xl text-muted-foreground/40">?</span>
+                    </div>
+                    <span className="text-muted-foreground/40 text-sm font-medium">
+                      {t("portfolio.comingSoon")}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

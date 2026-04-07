@@ -21,7 +21,7 @@ export function HeroSection() {
       <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="space-y-8 min-w-0">
-            <h1 className="text-[40px] leading-[1.1] sm:text-[52px] md:text-[72px] lg:text-[84px] font-bold tracking-[-0.03em]">
+            <h1 className="text-[42px] leading-[1.05] sm:text-[56px] md:text-[72px] lg:text-[84px] font-bold tracking-[-0.03em]">
               {t("hero.title1")}{" "}
               <span className="gradient-text">{t("hero.brand")}</span>
               {t("hero.title2")}{" "}
@@ -72,7 +72,7 @@ export function HeroSection() {
                 </div>
 
                 {/* Code content */}
-                <div className="p-6 font-mono text-sm">
+                <div className="p-6 font-mono text-sm leading-relaxed">
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
                       <span className="text-muted-foreground">1</span>
@@ -119,7 +119,7 @@ export function HeroSection() {
 
               {/* Floating badge */}
               <div className="absolute -top-3 -right-3 px-4 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-full shadow-lg shadow-primary/20 flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse-dot" />
                 Available
               </div>
 

@@ -80,10 +80,10 @@ export function Navigation() {
   return (
     <div className="container mx-auto px-4 pt-6 pb-4 relative z-50">
       <nav
-        className={`flex items-center justify-between px-5 py-3 max-w-2xl mx-auto rounded-2xl transition-all duration-300 ${
+        className={`flex items-center justify-between px-5 py-3 max-w-2xl mx-auto rounded-full transition-all duration-300 ${
           scrolled
-            ? "bg-[rgba(5,13,26,0.9)] backdrop-blur-xl border border-[rgba(255,255,255,0.08)] shadow-lg"
-            : "bg-[rgba(5,13,26,0.7)] backdrop-blur-md border border-[rgba(255,255,255,0.06)]"
+            ? "glass border border-[rgba(45,212,191,0.15)] shadow-lg shadow-primary/5"
+            : "glass-light border border-[rgba(255,255,255,0.06)]"
         }`}
       >
         <Link href="/" className="flex items-center gap-2 shrink-0 group">

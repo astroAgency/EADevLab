@@ -74,6 +74,12 @@ export function ServicesSection() {
                   style={{ background: `linear-gradient(90deg, transparent, ${service.accentColor}, transparent)` }}
                 />
                 
+                {/* Teal accent bottom border */}
+                <div 
+                  className="absolute inset-x-0 bottom-0 h-1 rounded-b-2xl"
+                  style={{ background: `linear-gradient(90deg, transparent 10%, ${service.accentColor} 50%, transparent 90%)` }}
+                />
+                
                 <div className="relative mb-6 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-card/50 z-10" />
                   <Image

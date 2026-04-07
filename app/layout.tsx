@@ -3,22 +3,23 @@ import type { Metadata, Viewport } from "next";
 
 import "./globals.css";
 
-import { Onest, Geist_Mono as V0_Font_Geist_Mono } from "next/font/google";
+import { Onest, JetBrains_Mono } from "next/font/google";
 import { LanguageProvider } from "@/context/language-context";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { Toaster } from "sonner";
 
-// Initialize fonts
-const _geistMono = V0_Font_Geist_Mono({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
-
-// Initialize Onest font with weights 500 and 700
+// Initialize Onest font with weights 400, 500, 600, and 700
 const onest = Onest({
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-onest",
+});
+
+// Initialize JetBrains Mono for code elements
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-jetbrains-mono",
 });
 
 export const metadata: Metadata = {
@@ -98,7 +99,7 @@ export default function RootLayout({
     // but the HTML lang attribute cannot be dynamically changed in Server Components
     <html lang="es">
       <body
-        className={`${onest.variable} font-sans antialiased overflow-x-hidden`}
+        className={`${onest.variable} ${jetbrainsMono.variable} font-sans antialiased overflow-x-hidden`}
       >
         <LanguageProvider>
           {children}

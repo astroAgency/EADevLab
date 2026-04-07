@@ -82,7 +82,7 @@ export function Navigation() {
       <nav
         className={`flex items-center justify-between px-5 py-3 max-w-2xl mx-auto rounded-full transition-all duration-300 ${
           scrolled
-            ? "glass border border-[rgba(45,212,191,0.15)] shadow-lg shadow-primary/5"
+            ? "glass border border-[rgba(45,212,191,0.2)] shadow-xl shadow-primary/10"
             : "glass-light border border-[rgba(255,255,255,0.06)]"
         }`}
       >

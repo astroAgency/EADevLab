@@ -151,37 +151,18 @@ export default function PortfolioPage() {
                 </div>
               ))}
 
-              {/* Coming Soon Card */}
-              <div className="group grid grid-cols-1 md:grid-cols-2 bg-card/30 backdrop-blur-sm border-2 border-dashed border-[rgba(255,255,255,0.1)] rounded-2xl overflow-hidden opacity-60">
-                {/* Content */}
-                <div className="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
-                  <span className="inline-block text-xs font-medium px-3 py-1.5 rounded-full mb-6 w-fit bg-muted/50 text-muted-foreground border border-[rgba(255,255,255,0.06)]">
-                    {t("portfolio.comingSoon")}
-                  </span>
-
-                  <h3 className="text-xl md:text-2xl font-bold mb-4 leading-tight text-muted-foreground">
+              {/* Coming Soon Placeholder Card */}
+              <div className="group flex items-center justify-center bg-card/30 border-2 border-dashed border-[rgba(255,255,255,0.12)] rounded-2xl overflow-hidden opacity-60 min-h-[200px] md:min-h-[280px] hover:opacity-70 hover:border-[rgba(255,255,255,0.18)] transition-all duration-300">
+                <div className="text-center px-6 py-12">
+                  <div className="w-16 h-16 rounded-2xl bg-muted/20 border border-[rgba(255,255,255,0.08)] flex items-center justify-center mx-auto mb-5">
+                    <span className="text-2xl text-muted-foreground/50">?</span>
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold text-muted-foreground mb-2">
                     {t("portfolio.newProject")} — {t("portfolio.comingSoon")}
                   </h3>
-
-                  <p className="text-base text-muted-foreground/60 mb-8 leading-relaxed">
-                    {t("portfolio.project3Desc")}
+                  <p className="text-sm text-muted-foreground/60 max-w-md">
+                    {t("portfolio.comingSoonDesc")}
                   </p>
-
-                  <span className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full w-fit bg-muted/30 text-muted-foreground/60 border border-[rgba(255,255,255,0.04)]">
-                    {t("portfolio.comingSoon")}
-                  </span>
-                </div>
-
-                {/* Placeholder Image */}
-                <div className="relative overflow-hidden min-h-[240px] sm:min-h-[300px] md:min-h-[420px] order-1 md:order-2 bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-2xl bg-muted/20 border border-[rgba(255,255,255,0.06)] flex items-center justify-center mx-auto mb-4">
-                      <span className="text-3xl text-muted-foreground/40">?</span>
-                    </div>
-                    <span className="text-muted-foreground/40 text-sm font-medium">
-                      {t("portfolio.comingSoon")}
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>

@@ -210,6 +210,7 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.filterSaaS": "Diseño SaaS",
     "portfolio.filterWeb": "Diseño Web",
     "portfolio.newProject": "Nuevo Proyecto",
+    "portfolio.comingSoonDesc": "Estamos trabajando en algo emocionante. Vuelve pronto para ver nuestro próximo proyecto.",
 
     // Case Study Sections - Kova Studio
     "caseStudy.kova.challenge": "El Desafío",
@@ -478,6 +479,7 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.filterSaaS": "SaaS Design",
     "portfolio.filterWeb": "Web Design",
     "portfolio.newProject": "New Project",
+    "portfolio.comingSoonDesc": "We're working on something exciting. Check back soon to see our next project.",
 
     // Case Study Sections - Kova Studio
     "caseStudy.kova.challenge": "The Challenge",

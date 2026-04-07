@@ -107,53 +107,18 @@ export function PortfolioSection() {
               </div>
             ))}
 
-            {/* WordPress Project - Coming Soon Card */}
-            <div className="group relative grid grid-cols-1 md:grid-cols-2 bg-card/50 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] rounded-2xl overflow-hidden">
-              {/* Blur overlay */}
-              <div className="absolute inset-0 bg-background/60 backdrop-blur-sm z-10 flex items-center justify-center">
-                <div className="text-center">
-                  <span className="inline-flex items-center gap-2 text-lg md:text-xl font-bold px-6 py-3 rounded-full bg-card/90 border border-[rgba(255,255,255,0.1)] text-foreground shadow-lg">
-                    {t("portfolio.comingSoon")}
-                  </span>
+            {/* Coming Soon Placeholder Card */}
+            <div className="group flex items-center justify-center bg-card/30 border-2 border-dashed border-[rgba(255,255,255,0.12)] rounded-2xl overflow-hidden opacity-60 min-h-[200px] md:min-h-[280px] hover:opacity-70 hover:border-[rgba(255,255,255,0.18)] transition-all duration-300">
+              <div className="text-center px-6 py-12">
+                <div className="w-16 h-16 rounded-2xl bg-muted/20 border border-[rgba(255,255,255,0.08)] flex items-center justify-center mx-auto mb-5">
+                  <span className="text-2xl text-muted-foreground/50">?</span>
                 </div>
-              </div>
-              
-              {/* Content */}
-              <div className="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
-                <div className="flex items-center mb-5">
-                  <Image
-                    src="/images/wp-logo.svg"
-                    alt="WordPress logo"
-                    width={120}
-                    height={34}
-                    className="h-auto object-contain brightness-200 opacity-80"
-                  />
-                </div>
-
-                <span className="inline-block text-xs font-medium px-3 py-1.5 rounded-full mb-6 w-fit bg-[#21759B]/15 border border-[#21759B]/30 text-[#21759B]">
-                  WordPress
-                </span>
-
-                <h3 className="text-xl md:text-2xl font-bold mb-4 leading-tight text-foreground">
-                  {t("portfolio.project3Title")}
+                <h3 className="text-lg md:text-xl font-semibold text-muted-foreground mb-2">
+                  {t("portfolio.newProject")} — {t("portfolio.comingSoon")}
                 </h3>
-
-                <p className="text-base text-muted-foreground mb-8 leading-relaxed">
-                  {t("portfolio.project3Desc")}
+                <p className="text-sm text-muted-foreground/60 max-w-md">
+                  {t("portfolio.comingSoonDesc")}
                 </p>
-
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                  {t("portfolio.comingSoon")}
-                </span>
-              </div>
-
-              {/* Placeholder Image */}
-              <div className="relative overflow-hidden min-h-[240px] sm:min-h-[300px] md:min-h-[420px] order-1 md:order-2 bg-gradient-to-br from-[#21759B]/20 to-[#0F172A] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 rounded-2xl bg-[#21759B]/20 border border-[#21759B]/30 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-4xl font-bold text-[#21759B]/60">W</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

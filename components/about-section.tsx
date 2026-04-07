@@ -9,11 +9,11 @@ export function AboutSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
+    <section className="relative py-24 md:py-36 lg:py-40 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 mesh-gradient opacity-50" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="flex justify-center order-2 md:order-1">
             {/* Abstract gradient orb with code icon */}
@@ -58,7 +58,7 @@ export function AboutSection() {
                 {t("about.title1")}{" "}
                 <span className="gradient-text">{t("about.title2")}</span>
               </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+              <p className="text-muted-foreground text-base md:text-lg leading-[1.7]">
                 {t("about.description")}
               </p>
             </div>

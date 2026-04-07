@@ -13,14 +13,28 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
-      <HeroSection />
+      <section className="scroll-snap-section">
+        <HeroSection />
+      </section>
       <LogoMarquee />
-      <ServicesSection />
-      <AboutSection />
-      <PortfolioSection />
-      <ExperienceSection />
-      <TestimonialsSection />
-      <CTASection />
+      <section className="scroll-snap-section">
+        <ServicesSection />
+      </section>
+      <section className="scroll-snap-section">
+        <AboutSection />
+      </section>
+      <section className="scroll-snap-section">
+        <PortfolioSection />
+      </section>
+      <section className="scroll-snap-section">
+        <ExperienceSection />
+      </section>
+      <section className="scroll-snap-section">
+        <TestimonialsSection />
+      </section>
+      <section className="scroll-snap-section">
+        <CTASection />
+      </section>
       <Footer />
     </main>
   )

@@ -43,23 +43,23 @@ export function ServicesSection() {
   ]
 
   return (
-    <section className="relative py-20 md:py-32">
+    <section className="relative py-24 md:py-36 lg:py-40">
       {/* Background */}
       <div className="absolute inset-0 bg-card/50" />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 md:mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-[-0.02em]">
               {t("services.title1")}{" "}
               <span className="gradient-text">{t("services.title2")}</span>
             </h2>
-            <p className="text-muted-foreground text-base md:text-lg font-medium leading-relaxed max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-base md:text-lg leading-[1.7] max-w-2xl mx-auto">
               {t("services.description")}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, index) => (
               <div
                 key={index}

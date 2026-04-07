@@ -77,18 +77,39 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /* Improved paragraph readability */
+  p {
+    max-width: 70ch;
+    line-height: 1.7;
+  }
+  /* Better heading hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    letter-spacing: -0.02em;
   }
 }
 
-/* Marquee animation */
+/* Marquee animation - smooth infinite loop */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* Gradient text — teal to emerald */
@@ -145,4 +166,31 @@
     radial-gradient(at 80% 0%, rgba(16, 185, 129, 0.12) 0px, transparent 50%),
     radial-gradient(at 0% 50%, rgba(45, 212, 191, 0.1) 0px, transparent 50%),
     radial-gradient(at 80% 100%, rgba(16, 185, 129, 0.12) 0px, transparent 50%);
+}
+
+/* Scroll snap container - optional enhancement */
+.scroll-snap-container {
+  scroll-snap-type: y proximity;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.scroll-snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+/* Disable scroll snap on mobile for better UX */
+@media (max-width: 768px) {
+  .scroll-snap-container {
+    scroll-snap-type: none;
+    height: auto;
+    overflow-y: visible;
+  }
+}
+
+/* Focus visible styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }

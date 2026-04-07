@@ -69,11 +69,11 @@ export function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="relative py-20 md:py-32">
+    <section className="relative py-24 md:py-36 lg:py-40">
       {/* Background */}
       <div className="absolute inset-0 mesh-gradient opacity-30" />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 pt-4 md:pt-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-[-0.02em]">
@@ -125,7 +125,7 @@ export function TestimonialsSection() {
                 <div
                   className={`transition-opacity duration-500 ${isAnimating ? "opacity-0" : "opacity-100"}`}
                 >
-                  <p className="text-base md:text-lg lg:text-xl mb-8 leading-relaxed text-foreground/90 italic">
+                  <p className="text-base md:text-lg lg:text-xl mb-8 leading-[1.7] text-foreground/90 italic">
                     &ldquo;{t(currentTestimonial.quoteKey)}&rdquo;
                   </p>
 

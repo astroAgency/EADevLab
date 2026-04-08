@@ -1,3 +1,4 @@
+// NOTE: kova-preview.svg, flowdesk-preview.svg, wp-preview.svg, wp-logo.svg removed – replaced by real screenshots
 "use client";
 
 import { ArrowRight, ExternalLink } from "lucide-react";
@@ -15,9 +16,8 @@ export function PortfolioSection() {
       tag: "UI/UX Design",
       logo: "/images/kova-logo.svg",
       bgColor: "from-[#0F172A] to-[#1E293B]",
-      illustration: "/images/kova-preview.svg",
+      illustration: "/images/kova-screen1.png",
       slug: "kova-studio",
-      accentColor: "#2dd4bf",
     },
     {
       titleKey: "portfolio.project2Title",
@@ -25,15 +25,14 @@ export function PortfolioSection() {
       tag: "SaaS Design",
       logo: "/images/flowdesk-logo.svg",
       bgColor: "from-[#0F172A] to-[#1E293B]",
-      illustration: "/images/flowdesk-preview.svg",
+      illustration: "/images/flowdesk-screen1.png",
       slug: "flow-desk",
-      accentColor: "#10b981",
     },
   ];
 
   return (
-    <section className="relative py-20 md:py-32">
-      <div className="container mx-auto px-4">
+    <section className="relative py-24 md:py-36 lg:py-40">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-[-0.02em]">
@@ -62,14 +61,7 @@ export function PortfolioSection() {
                     />
                   </div>
 
-                  <span 
-                    className="inline-block text-xs font-medium px-3 py-1.5 rounded-full mb-6 w-fit border"
-                    style={{ 
-                      backgroundColor: `${project.accentColor}15`,
-                      borderColor: `${project.accentColor}30`,
-                      color: project.accentColor 
-                    }}
-                  >
+                  <span className="inline-block text-xs font-medium px-3 py-1.5 rounded-full mb-6 w-fit bg-muted/50 text-muted-foreground border border-[rgba(255,255,255,0.08)]">
                     {project.tag}
                   </span>
 
@@ -77,7 +69,7 @@ export function PortfolioSection() {
                     {t(project.titleKey)}
                   </h3>
 
-                  <p className="text-base text-muted-foreground mb-8 leading-relaxed">
+                  <p className="text-base text-muted-foreground mb-8 leading-[1.7]">
                     {t(project.descKey)}
                   </p>
 
@@ -106,40 +98,6 @@ export function PortfolioSection() {
                 </div>
               </div>
             ))}
-
-            {/* Coming Soon Card */}
-            <div className="group grid grid-cols-1 md:grid-cols-2 bg-card/30 backdrop-blur-sm border-2 border-dashed border-[rgba(255,255,255,0.1)] rounded-2xl overflow-hidden opacity-60">
-              {/* Content */}
-              <div className="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
-                <span className="inline-block text-xs font-medium px-3 py-1.5 rounded-full mb-6 w-fit bg-muted/50 text-muted-foreground border border-[rgba(255,255,255,0.06)]">
-                  {t("portfolio.comingSoon")}
-                </span>
-
-                <h3 className="text-xl md:text-2xl font-bold mb-4 leading-tight text-muted-foreground">
-                  {t("portfolio.newProject")} — {t("portfolio.comingSoon")}
-                </h3>
-
-                <p className="text-base text-muted-foreground/60 mb-8 leading-relaxed">
-                  {t("portfolio.project3Desc")}
-                </p>
-
-                <span className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full w-fit bg-muted/30 text-muted-foreground/60 border border-[rgba(255,255,255,0.04)]">
-                  {t("portfolio.comingSoon")}
-                </span>
-              </div>
-
-              {/* Placeholder Image */}
-              <div className="relative overflow-hidden min-h-[240px] sm:min-h-[300px] md:min-h-[420px] order-1 md:order-2 bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 rounded-2xl bg-muted/20 border border-[rgba(255,255,255,0.06)] flex items-center justify-center mx-auto mb-4">
-                    <span className="text-3xl text-muted-foreground/40">?</span>
-                  </div>
-                  <span className="text-muted-foreground/40 text-sm font-medium">
-                    {t("portfolio.comingSoon")}
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="flex justify-center">

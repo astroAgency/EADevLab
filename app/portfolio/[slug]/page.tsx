@@ -26,7 +26,13 @@ const projects = {
     category: "uiux",
     logo: "/images/kova-logo.svg",
     bgColor: "from-[#0F172A] to-[#1E293B]",
-    illustration: "/images/kova-preview.svg",
+    illustration: "/images/kova-screen1.png",
+    screenshots: [
+      "/images/kova-screen1.png",
+      "/images/kova-screen2.png",
+      "/images/kova-screen3.png",
+      "/images/kova-screen4.png",
+    ],
     client: "Kova Studio",
     date: "2025",
     duration: "portfolio.duration1",
@@ -49,7 +55,13 @@ const projects = {
     category: "saas",
     logo: "/images/flowdesk-logo.svg",
     bgColor: "from-[#0F172A] to-[#1E293B]",
-    illustration: "/images/flowdesk-preview.svg",
+    illustration: "/images/flowdesk-screen1.png",
+    screenshots: [
+      "/images/flowdesk-screen1.png",
+      "/images/flowdesk-screen2.png",
+      "/images/flowdesk-screen3.png",
+      "/images/flowdesk-screen4.png",
+    ],
     client: "Flow Desk",
     date: "2025",
     duration: "portfolio.duration2",
@@ -129,14 +141,7 @@ export default function ProjectPage() {
 
             {/* Header */}
             <div className="mb-12">
-              <span
-                className="inline-block text-xs font-medium px-3 py-1.5 rounded-full mb-4 border"
-                style={{
-                  backgroundColor: `${project.accentColor}15`,
-                  borderColor: `${project.accentColor}30`,
-                  color: project.accentColor,
-                }}
-              >
+              <span className="inline-block text-xs font-medium px-3 py-1.5 rounded-full mb-4 bg-muted/50 text-muted-foreground border border-[rgba(255,255,255,0.08)]">
                 {project.tag}
               </span>
               <h1 className="text-3xl md:text-5xl font-bold mb-6 text-foreground tracking-[-0.02em]">
@@ -371,10 +376,10 @@ export default function ProjectPage() {
                         className="w-auto aspect-video"
                       />
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Results & Impact Section */}
             <div className="bg-card/60 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] rounded-2xl p-6 md:p-8 mb-12">

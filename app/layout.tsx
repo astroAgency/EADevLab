@@ -14,10 +14,10 @@ const _geistMono = V0_Font_Geist_Mono({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-// Initialize Onest font with weights 500 and 700
+// Initialize Onest font with extended weight range for better typography
 const onest = Onest({
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-onest",
 });
 

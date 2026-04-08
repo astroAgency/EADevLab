@@ -336,7 +336,7 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="border-t border-[rgba(255,255,255,0.06)] pt-8 text-center">
+          <div className="border-t border-[rgba(255,255,255,0.06)] pt-8 flex justify-center">
             <p className="text-muted-foreground text-sm">
               {t("footer.copyright")}
             </p>

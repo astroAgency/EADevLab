@@ -31,7 +31,8 @@ export function TestimonialsSection() {
       quoteKey: "testimonials.quote2",
       authorKey: "testimonials.author2",
       roleKey: "testimonials.role2",
-      companyKey: "testimonials.company2",
+      logo: "/images/flowdesk-logo.svg",
+      logoAlt: "Flow Desk",
     },
     {
       quoteKey: "testimonials.quote3",
@@ -73,7 +74,7 @@ export function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="relative py-20 md:py-32">
+    <section className="relative py-24 md:py-36 lg:py-40">
       {/* Background */}
       <div className="absolute inset-0 mesh-gradient opacity-30" />
 
@@ -129,7 +130,7 @@ export function TestimonialsSection() {
                 <div
                   className={`transition-opacity duration-500 ${isAnimating ? "opacity-0" : "opacity-100"}`}
                 >
-                  <p className="text-base md:text-lg lg:text-xl mb-8 leading-relaxed text-foreground/90 italic">
+                  <p className="text-base md:text-lg lg:text-xl mb-8 leading-[1.7] text-foreground/90 italic">
                     &ldquo;{t(currentTestimonial.quoteKey)}&rdquo;
                   </p>
 

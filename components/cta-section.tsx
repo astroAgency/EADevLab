@@ -9,7 +9,7 @@ export function CTASection() {
   const { t } = useLanguage()
   
   return (
-    <section className="container mx-auto px-4 py-20 md:py-32">
+    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36 lg:py-40">
       <div className="max-w-7xl mx-auto">
         <div className="relative overflow-hidden rounded-3xl">
           {/* Animated gradient background */}
@@ -29,7 +29,7 @@ export function CTASection() {
                 {t("cta.title2")}
               </span>
             </h2>
-            <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-[1.7]">
               {t("cta.description")}
             </p>
             <Link href="/contact">

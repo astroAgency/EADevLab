@@ -18,7 +18,7 @@ export function HeroSection() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36 lg:py-40 relative z-10">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="space-y-8 min-w-0">
             <h1 className="text-[40px] leading-[1.1] sm:text-[52px] md:text-[72px] lg:text-[84px] font-bold tracking-[-0.03em]">
@@ -29,7 +29,7 @@ export function HeroSection() {
               {t("hero.journey") !== "hero.journey" && ` ${t("hero.journey")}`}
             </h1>
 
-            <p className="text-muted-foreground text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-xl">
+            <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-[1.7] max-w-xl">
               {t("hero.description")}
             </p>
 

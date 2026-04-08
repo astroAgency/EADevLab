@@ -11,30 +11,16 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background scroll-snap-container">
+    <main className="min-h-screen bg-background">
       <Navigation />
-      <section className="scroll-snap-section">
-        <HeroSection />
-      </section>
+      <HeroSection />
       <LogoMarquee />
-      <section className="scroll-snap-section">
-        <ServicesSection />
-      </section>
-      <section className="scroll-snap-section">
-        <AboutSection />
-      </section>
-      <section className="scroll-snap-section">
-        <PortfolioSection />
-      </section>
-      <section className="scroll-snap-section">
-        <ExperienceSection />
-      </section>
-      <section className="scroll-snap-section">
-        <TestimonialsSection />
-      </section>
-      <section className="scroll-snap-section">
-        <CTASection />
-      </section>
+      <ServicesSection />
+      <AboutSection />
+      <PortfolioSection />
+      <ExperienceSection />
+      <TestimonialsSection />
+      <CTASection />
       <Footer />
     </main>
   )

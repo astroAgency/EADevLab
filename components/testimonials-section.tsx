@@ -38,25 +38,28 @@ export function TestimonialsSection() {
       quoteKey: "testimonials.quote3",
       authorKey: "testimonials.author3",
       roleKey: "testimonials.role3",
-      logo: "/images/studio-logo.svg",
-      logoAlt: "TechStart MX",
     },
   ];
 
-  const goToSlide = useCallback((index: number) => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex(index);
-    setTimeout(() => setIsAnimating(false), 500);
-  }, [isAnimating]);
+  const goToSlide = useCallback(
+    (index: number) => {
+      if (isAnimating) return;
+      setIsAnimating(true);
+      setCurrentIndex(index);
+      setTimeout(() => setIsAnimating(false), 500);
+    },
+    [isAnimating],
+  );
 
   const goToPrev = useCallback(() => {
-    const newIndex = currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1;
+    const newIndex =
+      currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1;
     goToSlide(newIndex);
   }, [currentIndex, testimonials.length, goToSlide]);
 
   const goToNext = useCallback(() => {
-    const newIndex = currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1;
+    const newIndex =
+      currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1;
     goToSlide(newIndex);
   }, [currentIndex, testimonials.length, goToSlide]);
 
@@ -74,8 +77,8 @@ export function TestimonialsSection() {
     <section className="relative py-24 md:py-36 lg:py-40">
       {/* Background */}
       <div className="absolute inset-0 mesh-gradient opacity-30" />
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 pt-4 md:pt-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-[-0.02em]">
@@ -112,7 +115,7 @@ export function TestimonialsSection() {
             <div className="relative bg-card/60 backdrop-blur-xl border border-[rgba(255,255,255,0.08)] rounded-2xl p-8 md:p-12 overflow-hidden">
               {/* Gradient accent border on left */}
               <div className="absolute left-0 top-8 bottom-8 w-1 bg-gradient-to-b from-primary via-accent to-primary rounded-full" />
-              
+
               {/* Quote icon */}
               <div className="absolute -top-6 left-8 md:left-12 w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
                 <Quote className="w-5 h-5 text-primary-foreground" />
@@ -137,7 +140,10 @@ export function TestimonialsSection() {
                       <div className="absolute -inset-0.5 bg-gradient-to-br from-primary to-accent rounded-full opacity-70" />
                       <div className="relative w-14 h-14 rounded-full bg-card border border-[rgba(255,255,255,0.1)] flex items-center justify-center">
                         <span className="text-lg font-bold text-primary">
-                          {t(currentTestimonial.authorKey).split(" ").map(n => n[0]).join("")}
+                          {t(currentTestimonial.authorKey)
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
                         </span>
                       </div>
                     </div>
@@ -157,7 +163,9 @@ export function TestimonialsSection() {
                             className="h-4 w-auto inline-block brightness-200 opacity-70"
                           />
                         ) : currentTestimonial.companyKey ? (
-                          <span className="font-medium">{t(currentTestimonial.companyKey)}</span>
+                          <span className="font-medium">
+                            {t(currentTestimonial.companyKey)}
+                          </span>
                         ) : null}
                       </div>
                     </div>
@@ -165,7 +173,7 @@ export function TestimonialsSection() {
                 </div>
               </div>
             </div>
-            
+
             {/* Dot Indicators */}
             <div className="flex justify-center gap-2 mt-6">
               {testimonials.map((_, index) => (
@@ -181,7 +189,7 @@ export function TestimonialsSection() {
                 />
               ))}
             </div>
-            
+
             {/* Subtle glow behind card */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 blur-3xl -z-10 scale-90" />
           </div>

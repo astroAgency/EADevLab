@@ -3,7 +3,16 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { useLanguage } from "@/context/language-context";
-import { ArrowLeft, ArrowRight, Calendar, Users, Clock, Search, Palette, Package } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Calendar,
+  Users,
+  Clock,
+  Search,
+  Palette,
+  Package,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,6 +41,12 @@ const projects = {
     link: "https://kovastudio.vercel.app/",
     tools: ["Figma", "Framer", "Notion"],
     caseStudyPrefix: "caseStudy.kova",
+    screens: {
+      1: "/images/kova-screen1.png",
+      2: "/images/kova-screen2.png",
+      3: "/images/kova-screen3.png",
+      4: "/images/kova-screen4.png",
+    },
   },
   "flow-desk": {
     titleKey: "portfolio.project2Title",
@@ -55,6 +70,12 @@ const projects = {
     link: "https://flowdeskdashboard.vercel.app/",
     tools: ["Figma", "Framer", "Notion", "Miro"],
     caseStudyPrefix: "caseStudy.flowdesk",
+    screens: {
+      1: "/images/flowdesk-screen1.png",
+      2: "/images/flowdesk-screen2.png",
+      3: "/images/flowdesk-screen3.png",
+      4: "/images/flowdesk-screen4.png",
+    },
   },
 };
 
@@ -273,7 +294,10 @@ export default function ProjectPage() {
                     className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4"
                     style={{ backgroundColor: `${project.accentColor}15` }}
                   >
-                    <Search className="w-7 h-7" style={{ color: project.accentColor }} />
+                    <Search
+                      className="w-7 h-7"
+                      style={{ color: project.accentColor }}
+                    />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">
                     {t(`${prefix}.discovery`)}
@@ -293,7 +317,10 @@ export default function ProjectPage() {
                     className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4"
                     style={{ backgroundColor: `${project.accentColor}15` }}
                   >
-                    <Palette className="w-7 h-7" style={{ color: project.accentColor }} />
+                    <Palette
+                      className="w-7 h-7"
+                      style={{ color: project.accentColor }}
+                    />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">
                     {t(`${prefix}.design`)}
@@ -313,7 +340,10 @@ export default function ProjectPage() {
                     className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4"
                     style={{ backgroundColor: `${project.accentColor}15` }}
                   >
-                    <Package className="w-7 h-7" style={{ color: project.accentColor }} />
+                    <Package
+                      className="w-7 h-7"
+                      style={{ color: project.accentColor }}
+                    />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">
                     {t(`${prefix}.delivery`)}
@@ -326,23 +356,24 @@ export default function ProjectPage() {
             </div>
 
             {/* Key Screens / Mockups Section */}
-            {project.screenshots && project.screenshots.length > 0 && (
-              <div className="mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-                  {t(`${prefix}.keyScreens`)}
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {project.screenshots.map((src, i) => (
-                    <div
-                      key={i}
-                      className="rounded-2xl overflow-hidden border border-[rgba(255,255,255,0.08)] bg-card/30"
-                    >
+            <div className="bg-card/60 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] rounded-2xl p-6 md:p-8 mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                {t(`${prefix}.keyScreens`)}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {Object.entries(project.screens).map(([key, src]) => (
+                  <div
+                    key={key}
+                    className="relative aspect-video rounded-xl overflow-hidden border border-[rgba(255,255,255,0.06)]"
+                    style={{ backgroundColor: `${project.accentColor}08` }}
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center">
                       <Image
                         src={src}
-                        alt={`${t(project.titleKey)} – ${t("caseStudy.screen")} ${i + 1}`}
-                        width={1200}
-                        height={800}
-                        className="w-full h-auto object-cover"
+                        alt={t("caseStudy.screen")}
+                        width={100}
+                        height={100}
+                        className="w-auto aspect-video"
                       />
                     </div>
                   ))}

@@ -213,14 +213,19 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Case Study Sections - Kova Studio
     "caseStudy.kova.challenge": "El Desafío",
-    "caseStudy.kova.challengeDesc": "Kova Studio necesitaba una plataforma integral de gestión de proyectos que combinara funcionalidad robusta con una interfaz intuitiva. El desafío principal era crear un sistema que pudiera manejar flujos de trabajo complejos manteniendo una experiencia de usuario simple y eficiente.",
+    "caseStudy.kova.challengeDesc":
+      "Kova Studio necesitaba una plataforma integral de gestión de proyectos que combinara funcionalidad robusta con una interfaz intuitiva. El desafío principal era crear un sistema que pudiera manejar flujos de trabajo complejos manteniendo una experiencia de usuario simple y eficiente.",
     "caseStudy.kova.research": "Investigación y Descubrimiento",
-    "caseStudy.kova.researchPoint1": "Entrevistas con usuarios para entender pain points en herramientas existentes",
-    "caseStudy.kova.researchPoint2": "Análisis competitivo de plataformas líderes de gestión de proyectos",
-    "caseStudy.kova.researchPoint3": "Mapeo de flujos de trabajo y priorización de funcionalidades clave",
+    "caseStudy.kova.researchPoint1":
+      "Entrevistas con usuarios para entender pain points en herramientas existentes",
+    "caseStudy.kova.researchPoint2":
+      "Análisis competitivo de plataformas líderes de gestión de proyectos",
+    "caseStudy.kova.researchPoint3":
+      "Mapeo de flujos de trabajo y priorización de funcionalidades clave",
     "caseStudy.kova.designProcess": "Proceso de Diseño",
     "caseStudy.kova.discovery": "Descubrimiento",
-    "caseStudy.kova.discoveryDesc": "Research de usuarios y análisis competitivo",
+    "caseStudy.kova.discoveryDesc":
+      "Research de usuarios y análisis competitivo",
     "caseStudy.kova.design": "Diseño",
     "caseStudy.kova.designDesc": "Wireframes, prototipos y sistema de diseño",
     "caseStudy.kova.delivery": "Entrega",
@@ -237,14 +242,19 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Case Study Sections - Flow Desk
     "caseStudy.flowdesk.challenge": "El Desafío",
-    "caseStudy.flowdesk.challengeDesc": "Flow Desk necesitaba un sistema de helpdesk moderno que permitiera a los equipos de soporte gestionar tickets de manera eficiente. El objetivo era diseñar una plataforma que priorizara la colaboración en equipo y redujera los tiempos de respuesta.",
+    "caseStudy.flowdesk.challengeDesc":
+      "Flow Desk necesitaba un sistema de helpdesk moderno que permitiera a los equipos de soporte gestionar tickets de manera eficiente. El objetivo era diseñar una plataforma que priorizara la colaboración en equipo y redujera los tiempos de respuesta.",
     "caseStudy.flowdesk.research": "Investigación y Descubrimiento",
-    "caseStudy.flowdesk.researchPoint1": "Análisis de flujos de trabajo de equipos de soporte técnico",
-    "caseStudy.flowdesk.researchPoint2": "Investigación de mejores prácticas en sistemas de ticketing",
-    "caseStudy.flowdesk.researchPoint3": "Definición de métricas clave de rendimiento para soporte",
+    "caseStudy.flowdesk.researchPoint1":
+      "Análisis de flujos de trabajo de equipos de soporte técnico",
+    "caseStudy.flowdesk.researchPoint2":
+      "Investigación de mejores prácticas en sistemas de ticketing",
+    "caseStudy.flowdesk.researchPoint3":
+      "Definición de métricas clave de rendimiento para soporte",
     "caseStudy.flowdesk.designProcess": "Proceso de Diseño",
     "caseStudy.flowdesk.discovery": "Descubrimiento",
-    "caseStudy.flowdesk.discoveryDesc": "Mapeo de procesos y necesidades del equipo",
+    "caseStudy.flowdesk.discoveryDesc":
+      "Mapeo de procesos y necesidades del equipo",
     "caseStudy.flowdesk.design": "Diseño",
     "caseStudy.flowdesk.designDesc": "UI modular y componentes reutilizables",
     "caseStudy.flowdesk.delivery": "Entrega",
@@ -263,14 +273,15 @@ const translations: Record<Language, Record<string, string>> = {
     "caseStudy.screen": "Pantalla",
 
     // Testimonials
-    "testimonials.quote2": "El equipo de EADevLab capturó perfectamente nuestra visión para Flow Desk. Su atención al detalle y enfoque en la experiencia de usuario resultó en una plataforma que nuestros clientes adoran.",
+    "testimonials.quote2":
+      "El equipo de EADevLab capturó perfectamente nuestra visión para Flow Desk. Su atención al detalle y enfoque en la experiencia de usuario resultó en una plataforma que nuestros clientes adoran.",
     "testimonials.author2": "María García",
     "testimonials.role2": "CEO",
     "testimonials.company2": "Flow Desk",
-    "testimonials.quote3": "Profesionales excepcionales. Entregaron a tiempo, superaron expectativas y mantuvieron comunicación constante durante todo el proyecto. Definitivamente volveremos a trabajar con ellos.",
+    "testimonials.quote3":
+      "Profesionales excepcionales. Entregaron a tiempo, superaron expectativas y mantuvieron comunicación constante durante todo el proyecto. Definitivamente volveremos a trabajar con ellos.",
     "testimonials.author3": "Carlos Mendoza",
     "testimonials.role3": "Director de Producto",
-    "testimonials.company3": "TechStart MX",
   },
   en: {
     // Navigation
@@ -470,11 +481,15 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Case Study Sections - Kova Studio
     "caseStudy.kova.challenge": "The Challenge",
-    "caseStudy.kova.challengeDesc": "Kova Studio needed a comprehensive project management platform that combined robust functionality with an intuitive interface. The main challenge was creating a system that could handle complex workflows while maintaining a simple and efficient user experience.",
+    "caseStudy.kova.challengeDesc":
+      "Kova Studio needed a comprehensive project management platform that combined robust functionality with an intuitive interface. The main challenge was creating a system that could handle complex workflows while maintaining a simple and efficient user experience.",
     "caseStudy.kova.research": "Research & Discovery",
-    "caseStudy.kova.researchPoint1": "User interviews to understand pain points in existing tools",
-    "caseStudy.kova.researchPoint2": "Competitive analysis of leading project management platforms",
-    "caseStudy.kova.researchPoint3": "Workflow mapping and prioritization of key features",
+    "caseStudy.kova.researchPoint1":
+      "User interviews to understand pain points in existing tools",
+    "caseStudy.kova.researchPoint2":
+      "Competitive analysis of leading project management platforms",
+    "caseStudy.kova.researchPoint3":
+      "Workflow mapping and prioritization of key features",
     "caseStudy.kova.designProcess": "Design Process",
     "caseStudy.kova.discovery": "Discovery",
     "caseStudy.kova.discoveryDesc": "User research and competitive analysis",
@@ -494,14 +509,19 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Case Study Sections - Flow Desk
     "caseStudy.flowdesk.challenge": "The Challenge",
-    "caseStudy.flowdesk.challengeDesc": "Flow Desk needed a modern helpdesk system that would allow support teams to manage tickets efficiently. The goal was to design a platform that prioritized team collaboration and reduced response times.",
+    "caseStudy.flowdesk.challengeDesc":
+      "Flow Desk needed a modern helpdesk system that would allow support teams to manage tickets efficiently. The goal was to design a platform that prioritized team collaboration and reduced response times.",
     "caseStudy.flowdesk.research": "Research & Discovery",
-    "caseStudy.flowdesk.researchPoint1": "Analysis of technical support team workflows",
-    "caseStudy.flowdesk.researchPoint2": "Research of best practices in ticketing systems",
-    "caseStudy.flowdesk.researchPoint3": "Definition of key performance metrics for support",
+    "caseStudy.flowdesk.researchPoint1":
+      "Analysis of technical support team workflows",
+    "caseStudy.flowdesk.researchPoint2":
+      "Research of best practices in ticketing systems",
+    "caseStudy.flowdesk.researchPoint3":
+      "Definition of key performance metrics for support",
     "caseStudy.flowdesk.designProcess": "Design Process",
     "caseStudy.flowdesk.discovery": "Discovery",
-    "caseStudy.flowdesk.discoveryDesc": "Process mapping and team needs assessment",
+    "caseStudy.flowdesk.discoveryDesc":
+      "Process mapping and team needs assessment",
     "caseStudy.flowdesk.design": "Design",
     "caseStudy.flowdesk.designDesc": "Modular UI and reusable components",
     "caseStudy.flowdesk.delivery": "Delivery",
@@ -520,14 +540,15 @@ const translations: Record<Language, Record<string, string>> = {
     "caseStudy.screen": "Screen",
 
     // Testimonials
-    "testimonials.quote2": "The EADevLab team perfectly captured our vision for Flow Desk. Their attention to detail and focus on user experience resulted in a platform that our customers love.",
+    "testimonials.quote2":
+      "The EADevLab team perfectly captured our vision for Flow Desk. Their attention to detail and focus on user experience resulted in a platform that our customers love.",
     "testimonials.author2": "Maria Garcia",
     "testimonials.role2": "CEO",
     "testimonials.company2": "Flow Desk",
-    "testimonials.quote3": "Exceptional professionals. They delivered on time, exceeded expectations, and maintained constant communication throughout the project. We will definitely work with them again.",
+    "testimonials.quote3":
+      "Exceptional professionals. They delivered on time, exceeded expectations, and maintained constant communication throughout the project. We will definitely work with them again.",
     "testimonials.author3": "Carlos Mendoza",
     "testimonials.role3": "Product Director",
-    "testimonials.company3": "TechStart MX",
   },
 };
 

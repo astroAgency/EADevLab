@@ -356,24 +356,23 @@ export default function ProjectPage() {
             </div>
 
             {/* Key Screens / Mockups Section */}
-            <div className="bg-card/60 backdrop-blur-sm border border-[rgba(255,255,255,0.06)] rounded-2xl p-6 md:p-8 mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-                {t(`${prefix}.keyScreens`)}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {Object.entries(project.screens).map(([key, src]) => (
-                  <div
-                    key={key}
-                    className="relative aspect-video rounded-xl overflow-hidden border border-[rgba(255,255,255,0.06)]"
-                    style={{ backgroundColor: `${project.accentColor}08` }}
-                  >
-                    <div className="absolute inset-0 flex items-center justify-center">
+            {project.screenshots && project.screenshots.length > 0 && (
+              <div className="mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                  {t(`${prefix}.keyScreens`)}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {project.screenshots.map((src, i) => (
+                    <div
+                      key={i}
+                      className="rounded-2xl overflow-hidden border border-[rgba(255,255,255,0.08)] bg-card/30"
+                    >
                       <Image
                         src={src}
-                        alt={t("caseStudy.screen")}
-                        width={100}
-                        height={100}
-                        className="w-auto aspect-video"
+                        alt={`${t(project.titleKey)} – ${t("caseStudy.screen")} ${i + 1}`}
+                        width={1200}
+                        height={800}
+                        className="w-full h-auto object-cover"
                       />
                     </div>
                   ))}

@@ -168,24 +168,25 @@
     radial-gradient(at 80% 100%, rgba(16, 185, 129, 0.12) 0px, transparent 50%);
 }
 
-/* Scroll snap container - optional enhancement */
+/* Scroll snap container */
 .scroll-snap-container {
-  scroll-snap-type: y proximity;
-  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
   height: 100vh;
 }
 
 .scroll-snap-section {
   scroll-snap-align: start;
   scroll-snap-stop: normal;
+  min-height: 100vh;
 }
 
 /* Disable scroll snap on mobile for better UX */
 @media (max-width: 768px) {
   .scroll-snap-container {
     scroll-snap-type: none;
+    overflow-y: auto;
     height: auto;
-    overflow-y: visible;
   }
 }
 

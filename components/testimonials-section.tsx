@@ -31,13 +31,15 @@ export function TestimonialsSection() {
       quoteKey: "testimonials.quote2",
       authorKey: "testimonials.author2",
       roleKey: "testimonials.role2",
-      companyKey: "testimonials.company2",
+      logo: "/images/flowdesk-logo.svg",
+      logoAlt: "Flow Desk",
     },
     {
       quoteKey: "testimonials.quote3",
       authorKey: "testimonials.author3",
       roleKey: "testimonials.role3",
-      companyKey: "testimonials.company3",
+      logo: "/images/studio-logo.svg",
+      logoAlt: "TechStart MX",
     },
   ];
 
